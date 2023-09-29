@@ -93,6 +93,7 @@ beforeAll(async (s) => {
     // jest doesn't exit if our setup has error here
     // https://github.com/facebook/jest/issues/2713
     if (!skipError) {
+      console.log('!skipError')
       err = e
     }
     // Closing the page since an error in the setup, for example a runtime error
@@ -111,6 +112,7 @@ afterAll(async () => {
     await browser.close()
   }
   if (err) {
+    console.log('after all error')
     throw err
   }
 })
